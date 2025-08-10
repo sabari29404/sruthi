@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRUTHI | Full Stack Developer</title>
+    <link rel="icon" href="assets/img/Brand S.png" type="image/x-icon">
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+        body {
+            background-color: #121212;
+            color: rgb(161, 161, 161);
+            margin: 0;
+            height: 100vh; /* Change to 100vh for full viewport height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: "Protest Riot", sans-serif;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1s ease-in; /* Smooth fade-in transition */
+            overflow: hidden; /* Disable scrolling */
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            overflow: hidden;
+        }
+
+        .loading span {
+            display: inline-block;
+            padding: 2px;
+            font-size: 15px;
+            transform: translateY(100%);
+            animation: moveup 1.5s ease-in-out infinite;
+            color: aliceblue;
+            opacity: 0;
+        }
+
+        @media (max-width: 800px) {
+            .loading span {
+                font-size: 12px;
+            }
+        }
+
+        @keyframes moveup {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            20% {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+            80% {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+        }
+
+        .loading span:nth-child(2) { animation-delay: 0.1s; }
+        .loading span:nth-child(3) { animation-delay: 0.2s; }
+        .loading span:nth-child(4) { animation-delay: 0.3s; }
+        .loading span:nth-child(5) { animation-delay: 0.4s; }
+        .loading span:nth-child(6) { animation-delay: 0.5s; }
+        .loading span:nth-child(7) { animation-delay: 0.6s; }
+
+        .attribution {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            gap: 3px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .attribution h5, .attribution h4 {
+            margin: 0;
+            font-weight: 500;
+            color: darkgray;
+        }
+
+        .attribution h4 {
+            background: linear-gradient(to right, #F3BB61, #F2DF7B);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <div class="loading">
+        <span>L</span>
+        <span>O</span>
+        <span>A</span>
+        <span>D</span>
+        <span>I</span>
+        <span>N</span>
+        <span>G</span>
+    </div>
+    <div class="attribution">
+       <label>
+        <h5>Designed by</h5>
+        <h4>SRUTHI</h4>
+       </label>
+    </div>
+    <script>
+        // Trigger the fade-in effect when the page loads
+        window.onload = function() {
+            document.body.style.opacity = '1';
+        };
+
+        // Fade out the page after 3 seconds
+        setTimeout(function() {
+            document.body.style.opacity = '0';
+        }, 3000);
+
+        // Redirect to another page after the fade-out
+        setTimeout(function() {
+            window.location.href = 'profile.html';
+        }, 4000);
+    </script>
+</body>
+</html>
